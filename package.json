@@ -1,0 +1,26 @@
+{
+  "name": "forum-parser",
+  "version": "1.0.0",
+  "main": "./src/index.js",
+  "author": "Philipp <43653566+bumagaga@users.noreply.github.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "nodemon ."
+  },
+  "dependencies": {
+    "axios": "^0.21.0",
+    "cheerio": "^1.0.0-rc.3",
+    "discord.js": "^12.4.1",
+    "dotenv": "^8.2.0",
+    "luxon": "^1.25.0",
+    "readdir": "^1.0.2"
+  },
+  "devDependencies": {
+    "eslint": "^7.12.0",
+    "eslint-config-prettier": "^6.14.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-prettier": "^3.1.4",
+    "nodemon": "^2.0.6",
+    "prettier": "^2.1.2"
+  }
+}
