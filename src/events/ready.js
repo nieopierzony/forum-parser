@@ -1,6 +1,7 @@
 'use strict';
 
 const { DateTime } = require('luxon');
+const checkNewThreads = require('../helpers/checkNewThreads');
 
 module.exports = client => {
   console.log(
@@ -12,6 +13,9 @@ module.exports = client => {
 
   console.log(`[Ready] Время: ${DateTime.local().toFormat('TT')}`);
   console.log(`[Ready] RAM: ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} MB`);
+
+  checkNewThreads(client, 839);
+  setInterval(() => checkNewThreads(client, 839), 5 * 1000);
 
   // Отправлять каждые 20 минут информацию об использованной памяти
   setInterval(() => {

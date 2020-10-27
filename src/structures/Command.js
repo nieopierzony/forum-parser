@@ -9,13 +9,9 @@ class Command extends AliasPiece {
     this.description = options.description;
     this.category = options.category || file.split('/')[0];
     this.clientPermissions =
-      options.clientPermissions && options.clientPermissions.length > 0
-        ? options.clientPermissions
-        : ['SEND_MESSAGES'];
+      options.clientPermissions && options.clientPermissions.length > 0 ? options.clientPermissions : ['SEND_MESSAGES'];
     this.userPermissions =
-      options.userPermissions && options.userPermissions.length > 0
-        ? options.userPermissions
-        : ['SEND_MESSAGES'];
+      options.userPermissions && options.userPermissions.length > 0 ? options.userPermissions : ['SEND_MESSAGES'];
 
     this.guildOnly = options.guildOnly;
     this.devOnly = options.devOnly;

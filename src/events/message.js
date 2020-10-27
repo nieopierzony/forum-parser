@@ -23,9 +23,7 @@ module.exports = (client, message) => {
   const cmdName = args[0].toLowerCase().normalize();
   args.shift();
 
-  const cmd = client.commands.find(
-    c => c.name === cmdName || (c.aliases && c.aliases.includes(cmdName)) || null,
-  );
+  const cmd = client.commands.find(c => c.name === cmdName || (c.aliases && c.aliases.includes(cmdName)) || null);
 
   // Если команда есть в БД
   if (cmd) {
@@ -34,9 +32,7 @@ module.exports = (client, message) => {
     // Логируем использование команды
     console.log(
       `[Message] ${message.author.tag} использовал команду ${cmd.name} ${
-        message.guild
-          ? `на сервере ${message.guild.name} в канале ${message.channel.name}`
-          : `в личных сообщениях`
+        message.guild ? `на сервере ${message.guild.name} в канале ${message.channel.name}` : `в личных сообщениях`
       }`,
     );
 

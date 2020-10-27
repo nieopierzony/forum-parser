@@ -30,9 +30,7 @@ module.exports = class AdvancedClient extends Client {
 
   async login(token) {
     const loaded = await Promise.all(
-      this.stores.map(
-        async store => `[Loader] Загружено ${await store.loadAll()} ${store.names[1]}.`,
-      ),
+      this.stores.map(async store => `[Loader] Загружено ${await store.loadAll()} ${store.names[1]}.`),
     ).catch(err => {
       console.error(err);
       process.exit();
