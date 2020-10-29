@@ -4,7 +4,7 @@ const difference = require('./difference');
 const getThreads = require('./getThreads');
 
 module.exports = async (client, forum) => {
-  const newThreadList = (await getThreads(forum, 4)).filter(el => !el.isSticky && !el.answers);
+  const newThreadList = (await getThreads(forum)).filter(el => !el.isSticky && !el.answers);
 
   // Если кеш пуст, заполняем новой информацией и выходим
   if (!client.threads) return (client.threads = newThreadList);
